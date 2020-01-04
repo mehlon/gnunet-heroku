@@ -4,7 +4,7 @@ echo -n "gnunet-cadet " >> index.html
 gnunet-peerinfo -sq >> index.html
 echo -n " 1" >> index.html
 
-caddy -port $PORT &
+caddy &
 mkfifo p0 p1
 while true; do
     gnunet-cadet -o 1 > p0 < p1 &
